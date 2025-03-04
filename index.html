@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoodUX</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding-top: 60px;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .logo span {
+            color: blue;
+            font-size: 12px;
+            display: block;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 5px;
+
+        }
+
+        .search-box input {
+            border: none;
+            outline: none;
+            padding: 5px;
+        }
+
+        .search-box button {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .buttons {
+            display: flex;
+            align-items: center;
+        }
+
+        .buttons .btn {
+            margin-left: 10px;
+            padding: 8px 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            background: white;
+        }
+
+        .buttons .btn-primary {
+            background: blue;
+            color: white;
+            border: none;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .menu-icon {
+                display: block;
+                font-size: 24px;
+                cursor: pointer;
+            }
+        }
+
+        .subscribe-section {
+            background: linear-gradient(to right, #6a5af9, #836fff);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            border-radius: 10px;
+            margin: 20px;
+        }
+
+        .subscribe-section h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .subscribe-section p {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .subscribe-form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #6a5af9;
+
+        }
+
+        .subscribe-form input {
+            padding: 10px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            width: 250px;
+
+            ;
+        }
+
+        .subscribe-form button {
+            padding: 10px 15px;
+            border: 1px solid wheat;
+            background: white;
+            color: #6a5af9;
+            font-weight: bold;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+
+        .unsubscribe-text {
+            margin-top: 10px;
+            font-size: 5px;
+        }
+
+      
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: auto;
+            /* max-width: 600px; */
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+
+        .content {
+            margin-bottom: 20px;
+        }
+
+        .content h2 {
+            margin-bottom: 10px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: flex-start;
+            margin-right: -250px;
+        }
+
+        .arrow {
+            font-size: 2.5em;
+        }
+
+        .button-container button {
+            padding: 10px 20px;
+            /* background: #007bff; */
+            color: black;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-right: -10px;
+        }
+
+        @media (min-width: 600px) {
+            .container {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .content {
+                width: 70%;
+            }
+
+            .button-container {
+                width: 30%;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+            }
+        }
+
+        /* this is third section */
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .image-box {
+            width: 30%;
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 600px) {
+            .image-box {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">GoodUX <span>BY APPCUES</span></div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#">Categories</a></li>
+            <li><a href="#">Behind the Experience</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+        <div class="search-box">
+            <input type="text" placeholder="Search">
+            <button>&#128269;</button>
+        </div>
+        <div class="buttons">
+            <button class="btn">What is Appcues?</button>
+            <button class="btn btn-primary">Subscribe</button>
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+    </nav>
+
+    <section class="subscribe-section">
+        <h2>DON'T MISS OUT ON THE LATEST</h2>
+        <p>Inspiring product-led experiences—straight to your inbox</p>
+        <div class="subscribe-form">
+            <input type="email" placeholder="Email Address">
+            <button>Stay inspired</button>
+        </div>
+        <p class="unsubscribe-text">Commitment issues? Unsubscribe at any time.</p>
+    </section>
+    <!-- this  is second secthin this page -->
+    <div class="container">
+        <div class="content">
+            <h2>Behind the Experience</h2>
+            <p>Each week, we'll feature inspiring UX examples, proven frameworks, and hard-earned lessons from in-depth
+                conversations with product, design, customer success, and marketing experts. The end goal is to help you
+                build user onboarding and product <br> experiences that turn more of your new users into lifelong
+                customers. </p>
+        </div>
+        <div class="button-container">
+            <button>All episode <span class="arrow"> &rarr;</span></button>
+        </div>
+    </div>
+    <div class="image-container">
+        <div class="image-box" style="background-image: url('./image/01.png');"></div>
+        <div class="image-box" style="background-image: url('./image/0200.png');"></div>
+        <div class="image-box" style="background-image: url('./image/0300.png');"></div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("navLinks").classList.toggle("active");
+        }
+    </script>
+</body>
+
+</html>
