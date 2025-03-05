@@ -5,247 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GoodUX</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            padding-top: 60px;
-        }
-
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: white;
-            padding: 10px 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #333;
-        }
-
-        .logo span {
-            color: blue;
-            font-size: 12px;
-            display: block;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            align-items: center;
-        }
-
-        .nav-links li {
-            margin: 0 15px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            font-size: 16px;
-        }
-
-        .search-box {
-            display: flex;
-            align-items: center;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 5px;
-
-        }
-
-        .search-box input {
-            border: none;
-            outline: none;
-            padding: 5px;
-        }
-
-        .search-box button {
-            background: none;
-            border: none;
-            cursor: pointer;
-        }
-
-        .buttons {
-            display: flex;
-            align-items: center;
-        }
-
-        .buttons .btn {
-            margin-left: 10px;
-            padding: 8px 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            cursor: pointer;
-            background: white;
-        }
-
-        .buttons .btn-primary {
-            background: blue;
-            color: white;
-            border: none;
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .menu-icon {
-                display: block;
-                font-size: 24px;
-                cursor: pointer;
-            }
-        }
-
-        .subscribe-section {
-            background: linear-gradient(to right, #6a5af9, #836fff);
-            color: white;
-            text-align: center;
-            padding: 50px 20px;
-            border-radius: 10px;
-            margin: 20px;
-        }
-
-        .subscribe-section h2 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        .subscribe-section p {
-            font-size: 32px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        .subscribe-form {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #6a5af9;
-
-        }
-
-        .subscribe-form input {
-            padding: 10px;
-            border: none;
-            border-radius: 5px 0 0 5px;
-            width: 250px;
-
-            ;
-        }
-
-        .subscribe-form button {
-            padding: 10px 15px;
-            border: 1px solid wheat;
-            background: white;
-            color: #6a5af9;
-            font-weight: bold;
-            border-radius: 0 5px 5px 0;
-            cursor: pointer;
-        }
-
-        .unsubscribe-text {
-            margin-top: 10px;
-            font-size: 5px;
-        }
-
-      
-        .container {
-            display: flex;
-            flex-direction: column;
-            width: auto;
-            /* max-width: 600px; */
-            background: white;
-            padding: 20px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-            border-radius: 8px;
-        }
-
-        .content {
-            margin-bottom: 20px;
-        }
-
-        .content h2 {
-            margin-bottom: 10px;
-        }
-
-        .button-container {
-            display: flex;
-            justify-content: flex-start;
-            margin-right: -250px;
-        }
-
-        .arrow {
-            font-size: 2.5em;
-        }
-
-        .button-container button {
-            padding: 10px 20px;
-            /* background: #007bff; */
-            color: black;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            margin-right: -10px;
-        }
-
-        @media (min-width: 600px) {
-            .container {
-                flex-direction: row;
-                justify-content: space-between;
-            }
-
-            .content {
-                width: 70%;
-            }
-
-            .button-container {
-                width: 30%;
-                display: flex;
-                align-items: center;
-                justify-content: flex-start;
-            }
-        }
-
-        /* this is third section */
-        .image-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            margin-top: 20px;
-        }
-
-        .image-box {
-            width: 30%;
-            height: 400px;
-            background-size: cover;
-            background-position: center;
-            border-radius: 8px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        @media (max-width: 600px) {
-            .image-box {
-                width: 100%;
-                margin-bottom: 10px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -294,12 +54,124 @@
         <div class="image-box" style="background-image: url('./image/0200.png');"></div>
         <div class="image-box" style="background-image: url('./image/0300.png');"></div>
     </div>
+    <!-- here is third section -->
+    <div class="flow-container">
+        <div class="flow-title">Flow gallery</div>
+        <div class="flow-description">
+            Discover the best UX examples—including onboarding tours and walkthroughs,
+            new feature and rebrand announcements, UX copywriting, signup flows, and more.
+        </div>
 
-    <script>
+        <div class="flow-buttons">
+            <button class="flow-btn active">Most Recent</button>
+            <button class="flow-btn special">💜 Made with Appcues</button>
+            <button class="flow-btn">User Onboarding</button>
+            <button class="flow-btn">Product Tour</button>
+            <button class="flow-btn">Feature Release</button>
+            <button class="flow-btn">Modals</button>
+            <button class="flow-btn">Mobile</button>
+        </div>
+
+        <div class="flow-categories">
+            <a href="#">All categories →</a>
+        </div>
+    </div>
+    <!-- here is forth section -->
+
+    <!-- <div class="card-container">
+        <div class="card">
+            <img src="./image/first.png" alt="Thinkific">
+            <div class="badge">USER ONBOARDING</div>
+            <div class="card-title">Thinkific's jump-in, jump-out onboarding checklist</div>
+            <div class="card-description">
+                A lot goes into course creation. No-code learning platform Thinkific uses a dynamic checklist to guide
+                users toward their goals.
+            </div>
+            <div class="screenshots">
+                <img src="image/6230cce907f5a55a824b0f78_camera-gray.svg" alt="icon"> 2 screenshots
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="./image/sec.png" alt="Lucidchart">
+            <div class="badge">USER ONBOARDING</div>
+            <div class="card-title">Lucidchart’s non-intrusive, educational approach to onboarding</div>
+            <div class="card-description">
+                Lucidchart rethought their onboarding experience for paid and freemium customers—giving each of these
+                groups just the right level of support and context.
+            </div>
+            <div class="screenshots">
+                <img src="./image/6230cce907f5a55a824b0f78_camera-gray.svg" alt="icon"> 6 screenshots
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="./image/third.png" alt="Navattic">
+            <div class="badge">PRODUCT TOURS</div>
+            <div class="card-title">Navattic’s interactive product demo</div>
+            <div class="card-description">
+                A product demo inside a product demo? See how Navattic uses a Google Analytics-inspired product demo to
+                show off its value to users.
+            </div>
+            <div class="screenshots">
+                <img src="./image/6230cce907f5a55a824b0f78_camera-gray.svg" alt="icon"> 4 screenshots
+            </div>
+        </div>
+    </div> -->
+    <!-- here is new code added -->
+
+     <div class="wrapper">
+        <div class="box">
+            <div class="image-box">
+                <img src="./image/first.png"alt="Photoshop Icon">
+                <div class="label">Modal Windows</div>
+            </div>
+            <h3>Adobe Photoshop’s quick actions for creatives</h3>
+            <p>Explorers make up part of any new user cohort. Learn how Adobe primes creative professionals to
+                experience value in Photoshop on their own terms.</p>
+            <div class="bottom-section">
+                <img src= "image/6230cce907f5a55a824b0f78_camera-gray.svg" alt="Icon">
+                2 screenshots
+            </div>
+        </div>
+        <div class="box">
+            <div class="image-box">
+                <img src="https://via.placeholder.com/100" alt="Photoshop Icon">
+                <div class="label">Modal Windows</div>
+            </div>
+            <h3>Adobe Photoshop’s quick actions for creatives</h3>
+            <p>Explorers make up part of any new user cohort. Learn how Adobe primes creative professionals to
+                experience value in Photoshop on their own terms.</p>
+            <div class="bottom-section">
+                <img src="https://via.placeholder.com/16" alt="Icon">
+                2 screenshots
+            </div>
+        </div>
+        <div class="box">
+            <div class="image-box">
+                <img src="https://via.placeholder.com/100" alt="Photoshop Icon">
+                <div class="label">Modal Windows</div>
+            </div>
+            <h3>Adobe Photoshop’s quick actions for creatives</h3>
+            <p>Explorers make up part of any new user cohort. Learn how Adobe primes creative professionals to
+                experience value in Photoshop on their own terms.</p>
+            <div class="bottom-section">
+                <img src="https://via.placeholder.com/16" alt="Icon">
+                2 screenshots
+            </div>
+        </div>
+
+
+
+
+
+
+    </div> 
+    <!-- <script>
         function toggleMenu() {
             document.getElementById("navLinks").classList.toggle("active");
         }
-    </script>
+    </script> -->
 </body>
 
 </html>
